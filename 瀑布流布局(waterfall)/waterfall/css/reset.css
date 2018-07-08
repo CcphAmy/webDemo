@@ -1,0 +1,28 @@
+html ,body ,ul,ol,h1,h2,h3 ,p, form ,dt ,dd,dl ，div {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+ol ,ul {
+    list-style: none;
+}
+.f_left {
+    float: left;
+}
+.f_right {
+    float: right;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}

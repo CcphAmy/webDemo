@@ -1,0 +1,109 @@
+html ,body {
+    width: 100%;
+}
+.container {
+    width: 100%;
+}
+.container .header {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #f0f0f0;
+}
+.container .header > div .logo {
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.container .header > div .register-btn ,
+.container .header > div .login-btn  {
+    line-height: 50px;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.container .header > div .register-btn.active {
+    background: #ff360c;
+    border: 1px solid #ff360c;
+    color:#fff;
+}
+.container .header > div .register-btn.active:hover {
+    background: #ff0002;
+    color:#fff;
+}
+
+.container .main {
+    width: 100%;
+    padding: 60px 0 100px 0;
+}
+
+.container .main > div  .row {
+    width: 100%;
+    position: relative;
+}
+.container .main > div  .row .col {
+    width: 232px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #ccc;
+}
+
+.container .main > div  .row .col .imgbox{
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center ;
+}
+.container .main > div  .row .col:nth-child(2n) .imgbox{
+    height: 220px;
+}
+.container .main > div  .row .col:nth-child(3n) .imgbox{
+    height:320px;
+}
+.container .main > div  .row .col:nth-child(4n) .imgbox{
+    height: 350px;
+}
+.container .main > div  .row .col:nth-child(5n) .imgbox{
+    height: 420px;
+}
+.container .main > div  .row .col p {
+    padding: 5px 10px;
+    color:#666;
+    font-size: 13px;
+}
+
+.loading-btn {
+    width: 260px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #ccc;
+    color:#555;
+    margin:50px auto;
+    cursor: pointer;
+}
+.loading-btn.active {
+    background: transparent; /* 透明*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+html , body {
+    width: 100%;
+    height: 100%;
+}
+body.login {
+    background: url("../images/login.jpg") no-repeat;
+    background-size: cover;
+}
+body.register{
+    background: url("../images/register.jpg") no-repeat;
+    background-size: cover;
+}
+.layout {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+.layout .header {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #f0f0f0;
+}
+.layout .header > div .logo {
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+
+}
+.layout .header > div .register-btn ,
+.layout .header > div .login-btn  {
+    line-height: 50px;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.layout .header > div .register-btn.active {
+    background: #ff360c;
+    border: 1px solid #ff360c;
+    color:#fff;
+}
+.layout .header > div .register-btn.active:hover {
+    background: #ff0002;
+    color:#fff;
+}
+.layout .login-form ,
+.layout .register-form {
+    width: 350px;
+    height: 450px;
+    background: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -225px;
+    margin-left: -175px;
+}
+.layout .login-form form ,
+.layout .register-form form {
+    width: 100%;
+    padding: 10px 15px;
+}
+.layout .login-form h3 ,
+.layout .register-form h3 {
+    height: 50px;
+    line-height: 50px;
+    background: #f1f2f3;
+}
+.layout .login-form form .inp ,
+.layout .register-form form .inp {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    background: #f0f0f0;
+    margin-top: 16px;
+}
+.layout .login-form form .inp input ,
+.layout .register-form form .inp input {
+    width: 100%;
+    height: 100%;
+}
+
+.layout .login-form form .inp button ,
+.layout .register-form form .inp button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+

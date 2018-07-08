@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+                <div class="w">
+                    <div class="f_left">
+                        <a class="logo" href="javascript:;">LOGO</a>
+                    </div>
+                    <div class="f_right">
+                        <a class=" login-btn" href="javascript:;">登录</a>
+                        <a class=" register-btn active" href="javascript:;">注册</a>
+                    </div>
+                </div>
+        </div>
+        <div class="main">
+            <div class="w items ">
+                <div class="row">
+
+                    <!-- TO DO LIST -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-btn" data-page="0">正在加载..</div>
+    <!--jquery 库  -->
+    <script src="./lib/jquery.min.js"></script>
+    <!--渲染模板-->
+    <script src="./lib/template-native.js"></script>
+    <!--定义模板-->
+    <script type="text/template" id="templateId">
+
+        <% for(var i = 0 ; i < res.length;i++){ %>
+        <div class="col">
+            <div class="imgbox" style="background-image: url('<%=res[i].path%>')"></div>
+            <p><%=res[i].text%></p>
+        </div>
+        <%}%>
+
+    </script>
+    <!--引入自己写的js文件-->
+    <!--script:src  tab -->
+    <script src="./js/index.js"></script>
+
+
+</body>
+</html>
