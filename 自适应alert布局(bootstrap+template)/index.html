@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Index</title>
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="lib/template-native.js"></script>
+        <script src="js/index.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css">
+
+    </head>
+
+    <body>  
+		<div class="container container-fluid" style="margin-bottom: 50px;">
+			<div class="row-fluid row-top">
+				<div class="span12">
+                    <!-- mp3 -->
+                    <div class="alert" id="alertMP3" style="background-color: rgba(0,0,0,0);display: none;">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <div id="mp3" style="margin-top: 150px;margin-bottom: -25px;"></div>
+                    </div>
+                    
+
+                    <!-- 通知 -->
+
+                    <div class="alert" id="newTips">
+                         <button type="button" class="close" data-dismiss="alert">×</button>
+                        <h4>
+                            通知!
+                        </h4> <span class="tips"><strong>管理员: </strong>校园诈繁频繁出现,同学们请注意.</span>
+                    </div>
+
+                    <!-- 滴滴搜人 -->
+                    <div class="alert">
+                         <button type="button" class="close" data-dismiss="alert">×</button>
+                        <h4>
+                            滴滴...
+                        </h4><span class="tips">现支持<strong>姓名/学号/职业/归属部门等</strong>模糊查询.</span>
+                        <input class="input-medium search-query" id="findText" name="findText" type="text" class="form-control" style="width:167px;margin:10px;"  placeholder="姓名,学号,办公室" /> 
+                        <button id="find" name="find" class="btn btn-default" style="width: 85px">搜索</button>
+                    </div>
+                    <div id="findData"></div>
+
+
+
+                    <div id="templateAlert"></div>
+
+                    <!-- 模板 -->
+                    <div class="alert">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <h4>信息中心<span class="tips" style="font-size: 12px;">数据仅供参考</span></h4>
+                        <div>
+                            
+                        </div>
+                    </div>
+
+
+                    <p style="font-size: 14px;color: #a8a8a8;">- 这个是底线 -</p>
+				</div>
+			</div>
+		</div>
+
+        <div class="main_nav_bottom">
+            <nav class="navbar navbar-default navbar-fixed-bottom"  style="background-color: #fff;">
+                <div class="container" align="center">
+                    <ul class="nav nav-tabs nav-tabs-justified" style="background-color: #fff;">
+                        <div class="row" align="center">
+                            <div class="bottom-tabs col-md-6 col-sm-6 col-xs-6" align="center"><li><a><img src="images/onToday.png" class="btnImg" alt="Today"></a></li></div>
+                            <div class="bottom-tabs col-md-6 col-sm-6 col-xs-6" align="center"><li><a href="info.html"><img src="images/me.png" class="btnImg" alt="Me"></a></li></div>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script type="text/template" id="templateId">
+
+            <% for(var i = 0 ; i < items.length;i++){ %>
+                <div class="alert" id="newTips">
+                     <button type="button" class="close" data-dismiss="alert">×</button>
+                    <h4>
+                        <%=items[i].title%>
+                    </h4> <span class="tips"><strong><%=items[i].name%>: </strong><%=items[i].content%></span>
+                </div>
+            <%}%>
+
+        </script>
+
+
+    </body>
+</html>
