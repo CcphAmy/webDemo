@@ -1,0 +1,102 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>给土肥圆打个赏</title>
+    
+    <script>
+    var setting = {
+        qqUrl: "https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&ac=82E76AE7265F98D366A1C4AB28E5A0F41ACC07648E4EBE0BD7A6B4302EE05C00&u=826672782&n=%E5%9C%9F%E8%82%A5%E5%9C%86",
+        wechatUrl: "wxp://f2f0qkcmyw1kDBTPrAVytAE8GcSY-dPXjJ3B",
+        aliUrl: "HTTPS://QR.ALIPAY.COM/FKX0864483P8KNCDYRS263?t=1534922291211",
+        qrcodeApi: "http://qr.liantu.com/api.php?text="    
+    }
+    </script>
+    
+    <style>
+    * {
+        margin: 0; padding: 0;
+        font-family: Microsoft yahei;
+    }
+    body {
+        background-color: #fff;
+    }
+    .code-item {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-bottom: 1px;
+        display: none;
+        background-color: #5c92ef;
+    }
+    .code-title {
+        height: 100px;
+        background-color: #f2f2f2;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60%;
+    }
+    .code-area {
+        text-align: center;
+    }
+    .code-area>img {
+        /* margin: 80px 0; */
+        padding-top: 80px;
+        width: 60%;
+        min-width: 100px;
+        border-radius: 10px;
+    }
+
+    #code-all>.code-title {
+        background-image: url("img/money.png");
+    }
+    .code-area>.code-footer {
+        width: 60%;
+        border-radius: 5px;
+        background-color: #fff;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: 20%;
+        margin-top:20px; 
+        margin-bottom:20px; 
+    }
+    .code-area>p {
+        color: #fff;
+        margin: 10%;
+    }
+    </style>    
+
+</head>
+<body>
+    <div class="code-item" id="code-all">
+        <div class="code-title"></div>
+        <div class="code-area">
+            <img id="page-url" src="img/money.png">
+
+            <div class="code-footer">长按识别二维码打赏小弟</div>
+            <p>喜欢我就打赏我哩~</p>
+        </div>
+    </div>
+    
+    <script>
+    if(navigator.userAgent.match(/Alipay/i)) {
+        window.location.href = setting.aliUrl; 
+    } else if(navigator.userAgent.match(/MicroMessenger\//i)) {
+        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(setting.wechatUrl);
+        document.getElementById("code-all").style.backgroundColor = "#54bc6e";
+    } else if(navigator.userAgent.match(/QQ\//i)) {
+        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(setting.qqUrl);
+        document.getElementById("code-all").style.backgroundColor = "#54b4ef";
+    } else {
+        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(window.location.href);
+    }
+    document.getElementById("code-all").style.display = "block";
+    function urlEncode(String) {
+        return encodeURIComponent(String).replace(/'/g,"%27").replace(/"/g,"%22");  
+    }
+    </script>
+
+</body>
+</html>
