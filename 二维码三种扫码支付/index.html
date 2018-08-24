@@ -11,7 +11,8 @@
         qqUrl: "https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&ac=82E76AE7265F98D366A1C4AB28E5A0F41ACC07648E4EBE0BD7A6B4302EE05C00&u=826672782&n=%E5%9C%9F%E8%82%A5%E5%9C%86",
         wechatUrl: "wxp://f2f0qkcmyw1kDBTPrAVytAE8GcSY-dPXjJ3B",
         aliUrl: "HTTPS://QR.ALIPAY.COM/FKX0864483P8KNCDYRS263?t=1534922291211",
-        qrcodeApi: "http://tool.oschina.net/action/qrcode/generate?data="  
+        qrcodeApi: "http://tool.oschina.net/action/qrcode/generate?data=",
+        urlparam: "&output=image%2Fpng&error=L&type=0&margin=10&size=4"
     }
     </script>
     
@@ -20,7 +21,9 @@
         margin: 0; padding: 0;
         font-family: Microsoft yahei;
     }
-    body {
+    html,body{
+        height: 100%;
+        width: 100%;
         background-color: #fff;
     }
     .code-item {
@@ -84,13 +87,13 @@
     if(navigator.userAgent.match(/Alipay/i)) {
         window.location.href = setting.aliUrl; 
     } else if(navigator.userAgent.match(/MicroMessenger\//i)) {
-        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(setting.wechatUrl);
+        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(setting.wechatUrl) + setting.urlparam;
         document.getElementById("code-all").style.backgroundColor = "#54bc6e";
     } else if(navigator.userAgent.match(/QQ\//i)) {
-        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(setting.qqUrl);
+        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(setting.qqUrl)  + setting.urlparam;
         document.getElementById("code-all").style.backgroundColor = "#54b4ef";
     } else {
-        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(window.location.href);
+        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(window.location.href)  + setting.urlparam;
     }
     document.getElementById("code-all").style.display = "block";
     function urlEncode(String) {
